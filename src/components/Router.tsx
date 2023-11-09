@@ -9,7 +9,7 @@ const Router = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path='/' element={<Layout />}>
+				<Route path='/schedule/' element={<Layout />}>
 					<Route element={<Home />} index />
 					<Route path='today' element={<Today />} />
 					<Route path='current-week' element={<CurrentWeek />} />
