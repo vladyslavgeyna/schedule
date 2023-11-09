@@ -21,9 +21,9 @@ type PageType = {
 }
 
 const pages: PageType[] = [
-	{ name: 'Всі дні', link: '/' },
-	{ name: 'Сьогодні', link: '/today' },
-	{ name: 'Поточний тиждень', link: '/current-week' },
+	{ name: 'Всі дні', link: `${BASE_URL}` },
+	{ name: 'Сьогодні', link: `${BASE_URL}today` },
+	{ name: 'Поточний тиждень', link: `${BASE_URL}current-week` },
 ]
 
 function Header() {
