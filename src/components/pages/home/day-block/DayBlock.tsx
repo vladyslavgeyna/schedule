@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { FC } from 'react'
+import { BASE_URL } from '../../../../contants'
 import styles from './DayBlock.module.scss'
 
 export type ClassItemType = {
@@ -85,12 +86,30 @@ const DayBlock: FC<PropType> = ({
 							<div>{item.time}</div>
 							<span>—</span>
 							<div className={styles.linkWrapper}>
-								<a
-									target='_blank'
-									className={styles.subLink}
-									href={item.meetLink}>
-									{item.subject}
-								</a>
+								{item.meetLink === BASE_URL ? (
+									<span className={styles.subLink}>
+										{item.subject
+											.substring(
+												0,
+												item.subject.indexOf('('),
+											)
+											.trim() + ' '}
+										<strong>
+											{item.subject
+												.substring(
+													item.subject.indexOf('('),
+												)
+												.trim()}
+										</strong>
+									</span>
+								) : (
+									<a
+										target='_blank'
+										className={styles.subLink}
+										href={item.meetLink}>
+										{item.subject}
+									</a>
+								)}
 							</div>
 						</div>
 					))}

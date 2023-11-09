@@ -22,10 +22,9 @@
 .logo {
 	display: flex;
 }
+a.navLink {
+	font-weight: bold;
+}
 a.navLink:hover {
 	text-decoration: underline !important;
-}
-
-a.navLink.active {
-	font-weight: bold !important;
 }

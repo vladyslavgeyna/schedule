@@ -5,12 +5,12 @@
 				{
 					"subject": "Системний аналіз та теорія прийняття рішень (107 ауд.)",
 					"time": "16:30",
-					"meetLink": "/schedule"
+					"meetLink": "/schedule/"
 				},
 				{
 					"subject": "Людино-машинний інтерфейс (102 ауд.)",
 					"time": "18:00",
-					"meetLink": "/schedule"
+					"meetLink": "/schedule/"
 				}
 			],
 			"dayName": "Понеділок (ОЧНО)"
@@ -20,22 +20,22 @@
 				{
 					"subject": "Системний аналіз та теорія прийняття рішень (250 ауд.)",
 					"time": "11:40",
-					"meetLink": "/schedule"
+					"meetLink": "/schedule/"
 				},
 				{
 					"subject": "Іноземна мова (317 ауд.)",
 					"time": "13:30",
-					"meetLink": "/schedule"
+					"meetLink": "/schedule/"
 				},
 				{
 					"subject": "Програмування мовою Go (226 ауд.)",
 					"time": "15:00",
-					"meetLink": "/schedule"
+					"meetLink": "/schedule/"
 				},
 				{
 					"subject": "Програмування мовою Go (226 ауд.)",
 					"time": "16:30",
-					"meetLink": "/schedule"
+					"meetLink": "/schedule/"
 				}
 			],
 			"dayName": "Вівторок (ОЧНО)"
@@ -92,12 +92,12 @@
 				{
 					"subject": "Програмування мовою Go (334 ауд.)",
 					"time": "15:00",
-					"meetLink": "/schedule"
+					"meetLink": "/schedule/"
 				},
 				{
 					"subject": "Системний аналіз та теорія прийняття рішень (107 ауд.)",
 					"time": "16:30",
-					"meetLink": "/schedule"
+					"meetLink": "/schedule/"
 				}
 			],
 			"dayName": "Понеділок (ОЧНО)"
@@ -107,12 +107,12 @@
 				{
 					"subject": "Системний аналіз та теорія прийняття рішень (316 ауд.)",
 					"time": "13:30",
-					"meetLink": "/schedule"
+					"meetLink": "/schedule/"
 				},
 				{
 					"subject": "Іноземна мова (248 ауд.)",
 					"time": "15:00",
-					"meetLink": "/schedule"
+					"meetLink": "/schedule/"
 				}
 			],
 			"dayName": "Вівторок (ОЧНО)"
