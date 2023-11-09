@@ -13,7 +13,6 @@ import Typography from '@mui/material/Typography'
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import styles from './Header.module.scss'
-const { BASE_URL } = import.meta.env
 
 type PageType = {
 	name: string
@@ -21,9 +20,9 @@ type PageType = {
 }
 
 const pages: PageType[] = [
-	{ name: 'Всі дні', link: `${BASE_URL}` },
-	{ name: 'Сьогодні', link: `${BASE_URL}today` },
-	{ name: 'Поточний тиждень', link: `${BASE_URL}current-week` },
+	{ name: 'Всі дні', link: `/schedule/` },
+	{ name: 'Сьогодні', link: `/schedule/today` },
+	{ name: 'Поточний тиждень', link: `/schedule/current-week` },
 ]
 
 function Header() {
@@ -162,7 +161,7 @@ function Header() {
 							<IconButton sx={{ p: 0 }}>
 								<Avatar
 									alt='Vladyslav Geyna (Author)'
-									src={`${BASE_URL}images/author.jpg`}
+									src={`/schedule/images/author.jpg`}
 								/>
 							</IconButton>
 						</a>
