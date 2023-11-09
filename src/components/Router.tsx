@@ -15,6 +15,7 @@ const Router = () => {
 					<Route path='current-week' element={<CurrentWeek />} />
 					<Route element={<NotFound />} path='*' />
 				</Route>
+				<Route element={<NotFound />} path='*' />
 			</Routes>
 		</BrowserRouter>
 	)

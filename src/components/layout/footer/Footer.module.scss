@@ -1,12 +1,8 @@
-@import '../../../assets/styles/variables.scss';
 .footer {
 	font-size: 14px;
 }
 .socialLink {
 	font-size: 22px;
-	svg {
-		transition: $transition;
-	}
 }
 .telegram {
 	&:hover {

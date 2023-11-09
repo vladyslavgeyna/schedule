@@ -6,6 +6,10 @@ import './assets/styles/global.scss'
 import './index.css'
 
 const theme = createTheme({
+	typography: {
+		fontFamily: ['Nunito', 'serif'].join(','),
+	},
+
 	palette: {
 		primary: {
 			main: '#000',
