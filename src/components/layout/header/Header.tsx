@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography'
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import styles from './Header.module.scss'
+const { BASE_URL } = import.meta.env
 
 type PageType = {
 	name: string
@@ -161,7 +162,7 @@ function Header() {
 							<IconButton sx={{ p: 0 }}>
 								<Avatar
 									alt='Vladyslav Geyna (Author)'
-									src='/images/author.jpg'
+									src={`${BASE_URL}images/author.jpg`}
 								/>
 							</IconButton>
 						</a>
