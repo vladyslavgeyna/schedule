@@ -1,0 +1,28 @@
+.title {
+	border: 2px solid #eee;
+	border-radius: 5px;
+	padding: 5px;
+	border-bottom: none;
+	font-size: 30px;
+	text-align: center;
+	font-weight: bold;
+}
+.daysWrapper {
+	margin-top: 25px;
+	gap: 15px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 1000px) {
+	.daysWrapper {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (max-width: 700px) {
+	.daysWrapper {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+.daysWrapper > div {
+	min-width: 175px;
+}

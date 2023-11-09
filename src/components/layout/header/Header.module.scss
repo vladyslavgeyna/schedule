@@ -1,0 +1,33 @@
+@import '../../../assets/styles/variables.scss';
+
+.header {
+	border-bottom: 0.1px solid #aaa;
+}
+
+.block {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+}
+.linksWrapper {
+	gap: 15px;
+	display: flex;
+	align-items: center;
+}
+
+.blockChild {
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	display: flex;
+}
+a.navLink:hover {
+	text-decoration: underline !important;
+}
+
+a.navLink.active {
+	font-weight: bold !important;
+}

@@ -1,0 +1,171 @@
+{
+	"firstWeekDays": [
+		{
+			"array": [
+				{
+					"subject": "Системний аналіз та теорія прийняття рішень (107 ауд.)",
+					"time": "16:30",
+					"meetLink": "/"
+				},
+				{
+					"subject": "Людино-машинний інтерфейс (102 ауд.)",
+					"time": "18:00",
+					"meetLink": "/"
+				}
+			],
+			"dayName": "Понеділок (ОЧНО)"
+		},
+		{
+			"array": [
+				{
+					"subject": "Системний аналіз та теорія прийняття рішень (250 ауд.)",
+					"time": "11:40",
+					"meetLink": "/"
+				},
+				{
+					"subject": "Іноземна мова (317 ауд.)",
+					"time": "13:30",
+					"meetLink": "/"
+				},
+				{
+					"subject": "Програмування мовою Go (226 ауд.)",
+					"time": "15:00",
+					"meetLink": "/"
+				},
+				{
+					"subject": "Програмування мовою Go (226 ауд.)",
+					"time": "16:30",
+					"meetLink": "/"
+				}
+			],
+			"dayName": "Вівторок (ОЧНО)"
+		},
+		{
+			"array": [
+				{
+					"subject": "Іноземна мова",
+					"time": "08:30",
+					"meetLink": "https://meet.google.com/fac-xosh-yih"
+				},
+				{
+					"subject": "Програмування мовою Go",
+					"time": "10:00",
+					"meetLink": "https://meet.google.com/cvk-wowc-gpr"
+				},
+				{
+					"subject": "React.js",
+					"time": "11:40",
+					"meetLink": "https://meet.google.com/apu-ybvr-caw"
+				},
+				{
+					"subject": "Людино-машинний інтерфейс",
+					"time": "13:30",
+					"meetLink": "meet.google.com/wqy-sjri-ueg"
+				}
+			],
+			"dayName": "Середа"
+		},
+		{
+			"array": [
+				{
+					"subject": "React.js",
+					"time": "08:30",
+					"meetLink": "https://meet.google.com/uyb-dhak-xqw"
+				},
+				{
+					"subject": "Аналіз вимог до ПЗ",
+					"time": "10:00",
+					"meetLink": "https://meet.google.com/ukx-sksf-dcv"
+				},
+				{
+					"subject": "Людино-машинний інтерфейс",
+					"time": "11:40",
+					"meetLink": "meet.google.com/wqy-sjri-ueg"
+				}
+			],
+			"dayName": "Четвер"
+		}
+	],
+	"secondWeekDays": [
+		{
+			"array": [
+				{
+					"subject": "Програмування мовою Go (334 ауд.)",
+					"time": "15:00",
+					"meetLink": "/"
+				},
+				{
+					"subject": "Системний аналіз та теорія прийняття рішень (107 ауд.)",
+					"time": "16:30",
+					"meetLink": "/"
+				}
+			],
+			"dayName": "Понеділок (ОЧНО)"
+		},
+		{
+			"array": [
+				{
+					"subject": "Системний аналіз та теорія прийняття рішень (316 ауд.)",
+					"time": "13:30",
+					"meetLink": "/"
+				},
+				{
+					"subject": "Іноземна мова (248 ауд.)",
+					"time": "15:00",
+					"meetLink": "/"
+				}
+			],
+			"dayName": "Вівторок (ОЧНО)"
+		},
+		{
+			"array": [
+				{
+					"subject": "Правила дорожнього руху",
+					"time": "11:40",
+					"meetLink": "https://meet.google.com/rak-mksv-pzb"
+				},
+				{
+					"subject": "Правила дорожнього руху",
+					"time": "13:30",
+					"meetLink": "https://meet.google.com/jjv-oyvj-gim"
+				},
+				{
+					"subject": "Тайм-менеджмент",
+					"time": "15:00",
+					"meetLink": "meet.google.com/hhv-ydtr-bzb"
+				},
+				{
+					"subject": "Тайм-менеджмент",
+					"time": "16:30",
+					"meetLink": "meet.google.com/hhv-ydtr-bzb"
+				}
+			],
+			"dayName": "Середа"
+		},
+		{
+			"array": [
+				{
+					"subject": "React.js",
+					"time": "08:30",
+					"meetLink": "https://meet.google.com/ahu-wrah-epi"
+				},
+				{
+					"subject": "React.js",
+					"time": "10:00",
+					"meetLink": "https://meet.google.com/ahu-wrah-epi"
+				},
+				{
+					"subject": "Аналіз вимог до ПЗ",
+					"time": "11:40",
+					"meetLink": "https://meet.google.com/ukx-sksf-dcv"
+				},
+				{
+					"subject": "Аналіз вимог до ПЗ",
+					"time": "13:30",
+					"meetLink": "https://meet.google.com/ukx-sksf-dcv"
+				}
+			],
+			"dayName": "Четвер"
+		}
+	]
+}
