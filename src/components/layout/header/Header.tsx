@@ -130,7 +130,7 @@ function Header() {
 							color: 'inherit',
 							textDecoration: 'none',
 						}}>
-						LOGO
+						SCHEDULE
 					</Typography>
 					<Box
 						sx={{
