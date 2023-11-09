@@ -16,45 +16,81 @@ type PropType = {
 	isTodayPage?: boolean
 }
 
-const isNow = (currentClassTime: string, nextClassTime: string | null) => {
-	const now = new Date()
-	const hoursNow = now.getHours()
-	const minutesNow = now.getMinutes()
+// const isNow = (currentClassTime: string, nextClassTime: string | null) => {
+// 	const now = new Date()
+// 	const hoursNow = now.getHours()
+// 	const minutesNow = now.getMinutes()
 
-	const [hours, minutes] = currentClassTime.split(':')
+// 	const [hours, minutes] = currentClassTime.split(':')
 
-	const hoursAsNumber = parseInt(hours, 10)
-	const minutesAsNumber = parseInt(minutes, 10)
+// 	const hoursAsNumber = parseInt(hours, 10)
+// 	const minutesAsNumber = parseInt(minutes, 10)
 
-	if (
-		hoursNow > hoursAsNumber ||
-		(hoursNow === hoursAsNumber && minutesNow >= minutesAsNumber)
-	) {
-		if (nextClassTime !== null) {
-			const [nextHours, nextMinutes] = nextClassTime.split(':')
-			let nextHoursAsNumber = parseInt(nextHours, 10)
-			let nextMinutesAsNumber = parseInt(nextMinutes, 10)
+// 	if (
+// 		hoursNow > hoursAsNumber ||
+// 		(hoursNow === hoursAsNumber && minutesNow >= minutesAsNumber)
+// 	) {
+// 		if (nextClassTime !== null) {
+// 			const [nextHours, nextMinutes] = nextClassTime.split(':')
+// 			let nextHoursAsNumber = parseInt(nextHours, 10)
+// 			let nextMinutesAsNumber = parseInt(nextMinutes, 10)
 
-			if (nextMinutesAsNumber >= 15) {
-				nextMinutesAsNumber -= 15
-			} else {
-				nextHoursAsNumber -= 1
-				nextMinutesAsNumber = 60 + nextMinutesAsNumber - 15
-			}
+// 			if (nextMinutesAsNumber >= 15) {
+// 				nextMinutesAsNumber -= 15
+// 			} else {
+// 				nextHoursAsNumber -= 1
+// 				nextMinutesAsNumber = 60 + nextMinutesAsNumber - 15
+// 			}
 
-			if (
-				hoursNow < nextHoursAsNumber ||
-				(hoursNow === nextHoursAsNumber &&
-					minutesNow < nextMinutesAsNumber)
-			) {
-				return true
-			}
-		} else {
-			return true
-		}
+// 			if (
+// 				hoursNow < nextHoursAsNumber ||
+// 				(hoursNow === nextHoursAsNumber &&
+// 					minutesNow < nextMinutesAsNumber)
+// 			) {
+// 				return true
+// 			}
+// 		} else {
+// 			return true
+// 		}
+// 	}
+
+// 	return false
+// }
+
+function isNow(
+	currentClassTimeString: string,
+	previousClassTimeString: string | null,
+) {
+	const [currentHours, currentMinutes] = currentClassTimeString.split(':')
+	const currentClassTime = new Date()
+	currentClassTime.setHours(parseInt(currentHours, 10))
+	currentClassTime.setMinutes(parseInt(currentMinutes, 10))
+
+	const endOfCurrentClassTime = new Date()
+	endOfCurrentClassTime.setHours(currentClassTime.getHours() + 1)
+	endOfCurrentClassTime.setMinutes(currentClassTime.getMinutes() + 20)
+
+	if (previousClassTimeString) {
+		const [previousHours, previousMinutes] =
+			previousClassTimeString.split(':')
+		const previousClassTime = new Date()
+		previousClassTime.setHours(parseInt(previousHours, 10))
+		previousClassTime.setMinutes(parseInt(previousMinutes, 10))
+
+		const endOfPreviousClassTime = new Date()
+		endOfPreviousClassTime.setHours(previousClassTime.getHours() + 1)
+		endOfPreviousClassTime.setMinutes(previousClassTime.getMinutes() + 20)
+
+		return (
+			new Date() <= endOfCurrentClassTime &&
+			new Date() >= endOfPreviousClassTime
+		)
+	} else {
+		return (
+			currentClassTime >= new Date() ||
+			new Date() <= endOfCurrentClassTime
+		)
 	}
-
-	return false
 }
 
 const DayBlock: FC<PropType> = ({
@@ -78,7 +114,7 @@ const DayBlock: FC<PropType> = ({
 								isToday &&
 								isNow(
 									item.time,
-									classes[index + 1]?.time || null,
+									index > 0 ? classes[index - 1].time : null,
 								)
 									? styles.now
 									: ''
