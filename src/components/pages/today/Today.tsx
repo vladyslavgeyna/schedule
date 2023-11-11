@@ -1,7 +1,7 @@
 import data from '../../../schedule.json'
 import DayBlock from '../home/day-block/DayBlock'
 import { DayType, isCurrentWeek, isToday } from '../home/week-block/WeekBlock'
-import NotFound from '../not-found/NotFound'
+import styles from './Today.module.scss'
 
 export type JSONDataType = {
 	firstWeekDays: DayType[]
@@ -24,7 +24,11 @@ const Today = () => {
 	}
 
 	if (!todayDay) {
-		return <NotFound />
+		return (
+			<h1 className={styles.todayNotFound}>
+				На сьогодні занять не знайдено
+			</h1>
+		)
 	}
 
 	return (

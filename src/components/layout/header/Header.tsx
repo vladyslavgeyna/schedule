@@ -14,6 +14,7 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { BASE_URL } from '../../../contants'
 import styles from './Header.module.scss'
+import './style.css'
 
 type PageType = {
 	name: string
