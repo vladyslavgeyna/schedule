@@ -1,6 +1,11 @@
 import data from '../../../schedule.json'
 import DayBlock from '../home/day-block/DayBlock'
-import { DayType, isCurrentWeek, isToday } from '../home/week-block/WeekBlock'
+import {
+	DayType,
+	formatDayDate,
+	isCurrentWeek,
+	isToday,
+} from '../home/week-block/WeekBlock'
 import styles from './Today.module.scss'
 
 export type JSONDataType = {
@@ -33,6 +38,7 @@ const Today = () => {
 
 	return (
 		<DayBlock
+			todayFormatDate={formatDayDate(new Date())}
 			classes={todayDay.array}
 			dayName={todayDay.dayName}
 			isToday={true}

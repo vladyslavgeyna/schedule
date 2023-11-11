@@ -38,23 +38,20 @@ function getMonday(d: Date) {
 	return new Date(d.setDate(diff))
 }
 
+export const formatDayDate = (d: Date) => {
+	const dayString =
+		d.getDate() < 10 ? '0' + d.getDate().toString() : d.getDate().toString()
+	const month = d.getMonth() + 1
+	const monthString = month < 10 ? '0' + month.toString() : month.toString()
+	return dayString + '.' + monthString
+}
+
 const WeekBlock: FC<PropsType> = ({
 	weekTitle,
 	days,
 	isCurrentWeekPage = false,
 }) => {
 	const dates = new Map<string, string>()
-
-	const formatDayDate = (d: Date) => {
-		const dayString =
-			d.getDate() < 10
-				? '0' + d.getDate().toString()
-				: d.getDate().toString()
-		const month = d.getMonth() + 1
-		const monthString =
-			month < 10 ? '0' + month.toString() : month.toString()
-		return dayString + '.' + monthString
-	}
 
 	const currentWeekFirstDay = getMonday(new Date())
 	if (isCurrentWeek(parseInt(weekTitle.split(' ')[0]))) {
