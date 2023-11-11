@@ -10,6 +10,7 @@ export type DayType = {
 type PropsType = {
 	weekTitle: string
 	days: DayType[]
+	isCurrentWeekPage?: boolean
 }
 
 export function getWeekNumber(d = new Date()) {
@@ -30,15 +31,70 @@ export const isCurrentWeek = (weekNumber: number) => {
 
 export const isToday = (index: number) => index + 1 === new Date().getDay()
 
-const WeekBlock: FC<PropsType> = ({ weekTitle, days }) => {
+function getMonday(d: Date) {
+	d = new Date(d)
+	const day = d.getDay(),
+		diff = d.getDate() - day + (day == 0 ? -6 : 1)
+	return new Date(d.setDate(diff))
+}
+
+const WeekBlock: FC<PropsType> = ({
+	weekTitle,
+	days,
+	isCurrentWeekPage = false,
+}) => {
+	const dates = new Map<string, string>()
+
+	const formatDayDate = (d: Date) => {
+		const dayString =
+			d.getDate() < 10
+				? '0' + d.getDate().toString()
+				: d.getDate().toString()
+		const month = d.getMonth() + 1
+		const monthString =
+			month < 10 ? '0' + month.toString() : month.toString()
+		return dayString + '.' + monthString
+	}
+
+	const currentWeekFirstDay = getMonday(new Date())
+	if (isCurrentWeek(parseInt(weekTitle.split(' ')[0]))) {
+		for (const day of days) {
+			dates.set(day.dayName, formatDayDate(currentWeekFirstDay))
+			currentWeekFirstDay.setDate(currentWeekFirstDay.getDate() + 1)
+		}
+	} else {
+		if (parseInt(weekTitle.split(' ')[0]) === 1) {
+			currentWeekFirstDay.setDate(currentWeekFirstDay.getDate() - 7)
+			for (const day of days) {
+				dates.set(day.dayName, formatDayDate(currentWeekFirstDay))
+				currentWeekFirstDay.setDate(currentWeekFirstDay.getDate() + 1)
+			}
+		} else {
+			currentWeekFirstDay.setDate(currentWeekFirstDay.getDate() + 7)
+			for (const day of days) {
+				dates.set(day.dayName, formatDayDate(currentWeekFirstDay))
+				currentWeekFirstDay.setDate(currentWeekFirstDay.getDate() + 1)
+			}
+		}
+	}
+
 	return (
 		<div className={styles.wrapper}>
 			<div>
-				<h2 className={styles.title}>{weekTitle}</h2>
+				<h2
+					className={`${styles.title} ${
+						isCurrentWeek(parseInt(weekTitle.split(' ')[0])) &&
+						!isCurrentWeekPage
+							? styles.titleCurrentWeek
+							: ''
+					}`}>
+					{weekTitle}
+				</h2>
 			</div>
 			<div className={styles.daysWrapper}>
 				{days.map((day, index) => (
 					<DayBlock
+						todayFormatDate={dates.get(day.dayName) || ''}
 						key={day.dayName}
 						classes={day.array}
 						dayName={day.dayName}

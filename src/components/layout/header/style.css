@@ -1,0 +1,13 @@
+.MuiBox-root {
+	gap: 5px;
+}
+.MuiBox-root a.active {
+	text-decoration: none;
+	background-color: #222;
+}
+.MuiBox-root a {
+	font-weight: 700 !important;
+}
+.MuiBox-root a:hover {
+	background-color: #222;
+}

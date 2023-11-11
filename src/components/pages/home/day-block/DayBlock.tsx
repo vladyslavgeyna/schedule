@@ -14,48 +14,8 @@ type PropType = {
 	classes: ClassItemType[]
 	isToday: boolean
 	isTodayPage?: boolean
+	todayFormatDate: string
 }
-
-// const isNow = (currentClassTime: string, nextClassTime: string | null) => {
-// 	const now = new Date()
-// 	const hoursNow = now.getHours()
-// 	const minutesNow = now.getMinutes()
-
-// 	const [hours, minutes] = currentClassTime.split(':')
-
-// 	const hoursAsNumber = parseInt(hours, 10)
-// 	const minutesAsNumber = parseInt(minutes, 10)
-
-// 	if (
-// 		hoursNow > hoursAsNumber ||
-// 		(hoursNow === hoursAsNumber && minutesNow >= minutesAsNumber)
-// 	) {
-// 		if (nextClassTime !== null) {
-// 			const [nextHours, nextMinutes] = nextClassTime.split(':')
-// 			let nextHoursAsNumber = parseInt(nextHours, 10)
-// 			let nextMinutesAsNumber = parseInt(nextMinutes, 10)
-
-// 			if (nextMinutesAsNumber >= 15) {
-// 				nextMinutesAsNumber -= 15
-// 			} else {
-// 				nextHoursAsNumber -= 1
-// 				nextMinutesAsNumber = 60 + nextMinutesAsNumber - 15
-// 			}
-
-// 			if (
-// 				hoursNow < nextHoursAsNumber ||
-// 				(hoursNow === nextHoursAsNumber &&
-// 					minutesNow < nextMinutesAsNumber)
-// 			) {
-// 				return true
-// 			}
-// 		} else {
-// 			return true
-// 		}
-// 	}
-
-// 	return false
-// }
 
 function isNow(
 	currentClassTimeString: string,
@@ -98,13 +58,16 @@ const DayBlock: FC<PropType> = ({
 	classes,
 	isToday = false,
 	isTodayPage = false,
+	todayFormatDate,
 }) => {
 	return (
 		<div
 			className={`${styles.wrapper} ${isToday ? styles.today : ''} ${
 				isTodayPage ? styles.todayPage : ''
 			}`}>
-			<div className={styles.dayName}>{dayName}</div>
+			<div className={styles.dayName}>
+				{dayName} {todayFormatDate}
+			</div>
 			<div>
 				<div className={styles.daysWrapper}>
 					{classes.map((item, index) => (

@@ -11,6 +11,7 @@ const schedule = data as JSONDataType
 const CurrentWeek = () => {
 	return (
 		<WeekBlock
+			isCurrentWeekPage={true}
 			days={
 				isCurrentWeek(1)
 					? schedule.firstWeekDays
